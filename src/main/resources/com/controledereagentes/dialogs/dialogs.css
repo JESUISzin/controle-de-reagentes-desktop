@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'InterBold';
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+.dialogContainer {
+    -fx-background-color: #181818;
+    -fx-border-color: #404040;
+    /*-fx-effect: dropshadow(gaussian, rgba(47, 47, 47, 0.8), 20, 0.5, 0, 0);*/
+}
+
+.title {
+    -fx-font-family: 'Inter-Bold';
+    -fx-font-size: 18;
+    -fx-fill: white;
+}
+
+.commonText {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-fill: white;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #3f3f3f;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+
+.buttonDelete {
+    -fx-background-color: #1e1e1e;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-text-fill: #ff6969;
+}
+
+.input {
+    -fx-background-color: transparent;
+    -fx-border-color: #3f3f3f;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}

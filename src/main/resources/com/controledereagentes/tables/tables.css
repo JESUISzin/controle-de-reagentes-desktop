@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'InterBold';
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+.title {
+    -fx-font-family: 'Inter-Bold';
+    -fx-font-size: 18;
+    -fx-fill: white;
+}
+
+.commonText {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-fill: white;
+}
+
+.button {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #3f3f3f;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+
+.tableContainer {
+    -fx-background-color: #181818;
+    -fx-border-color: #404040;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.tableView {
+    -fx-background-color: transparent;
+    -fx-border-color: #3f3f3f;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+}
+
+/* Header da tabela */
+.tableView .column-header-background .filler {
+    -fx-background-color: #1e1e1e;
+}
+
+.tableView .column-header-background {
+    -fx-background-color: #1e1e1e;
+}
+
+.tableView .column-header {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: transparent #3f3f3f #3f3f3f transparent;
+}
+
+.tableView .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter-Bold';
+}
+
+/* Linhas da tabela */
+.tableView .table-row-cell {
+    -fx-background-color: #1e1e1e;
+}
+
+.tableView .table-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #3f3f3f #3f3f3f transparent;
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-alignment: center;
+}
+
+.tableView .table-row-cell:hover {
+    -fx-background-color: #3f3f3f;
+}
+
+/* Scrollbar da tablea */
+.tableView .virtual-flow .scroll-bar:vertical,
+.tableView .virtual-flow .scroll-bar:vertical .track,
+.tableView .virtual-flow .scroll-bar:vertical .track-background,
+.tableView .virtual-flow .scroll-bar:horizontal,
+.tableView .virtual-flow .scroll-bar:horizontal .track,
+.tableView .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.tableView .virtual-flow .scroll-bar .increment-button,
+.tableView .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  #3f3f3f;
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  #3f3f3f;
+}
