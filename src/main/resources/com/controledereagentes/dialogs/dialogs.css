@@ -37,6 +37,10 @@
     -fx-text-fill: white;
 }
 
+.button:pressed {
+    -fx-background-color: #404040;
+}
+
 .buttonDelete {
     -fx-background-color: #1e1e1e;
     -fx-border-radius: 5px;
@@ -54,4 +58,114 @@
     -fx-font-family: 'Inter';
     -fx-font-size: 14;
     -fx-text-fill: white;
+}
+
+/* date-picker */
+.datepicker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.datepicker .arrow-button {
+    -fx-background-color: #1e1e1e;
+}
+
+.datepicker .arrow-button:hover {
+    -fx-background-color: #1e1e1e;
+    -fx-cursor: hand;
+}
+
+.datepicker .arrow-button .arrow {
+    -fx-background-color: #6e6e6e;
+}
+
+.datepicker .cell {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #3f3f3f;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+
+.datepicker .cell:hover {
+    -fx-background-color: #3f3f3f;
+}
+
+.datepicker.cell:focused {
+    -fx-background-color: #3f3f3f;
+}
+
+.datepicker .selected {
+    -fx-background-color: #3f3f3f;
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter-Bold';
+}
+
+.datepicker .selected:focused {
+    -fx-background-color: #3f3f3f;
+    -fx-text-fill: white;
+}
+
+.datepicker .date-picker-popup {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.datepicker .date-picker-popup .month-year-pane {
+    -fx-background-color: #3f3f3f;
+    -fx-base: #1d1d1d;
+}
+
+.datepicker.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: white;
+}
+
+.datepicker .date-picker-popup .week-number-cell {
+    -fx-text-fill: white;
+}
+
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: white;
+}
+
+/* ComboBox */
+.combobox .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.combobox .combo-box-popup .list-view {
+    -fx-background-color: transparent, #1e1e1e;
+}
+
+.combobox .combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #3f3f3f;
+    -fx-text-fill: white;
+}
+
+/* Scrollbar dos dialogs */
+.virtual-flow .scroll-bar:vertical .track-background,
+.virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: #181818;
+}
+
+.virtual-flow .scroll-bar .increment-button,
+.virtual-flow .scroll-bar .decrement-button {
+    -fx-padding: 2;
+}
+
+.scroll-bar:vertical *.increment-button,
+.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: #181818;
+}
+
+.scroll-bar:vertical *.increment-arrow,
+.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: #3f3f3f;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #3f3f3f;
 }

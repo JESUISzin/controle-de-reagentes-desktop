@@ -1,11 +1,13 @@
 package com.controledereagentes.dao;
 
 
+import com.controledereagentes.ConnectionFactory;
 import com.controledereagentes.models.FornecedorModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,8 +16,8 @@ import java.sql.SQLException;
 public class FornecedorDAO {
     private final Connection conDAO;
 
-    public FornecedorDAO(Connection con) {
-        this.conDAO = con;
+    public FornecedorDAO() {
+        this.conDAO = ConnectionFactory.getConnection();
     }
 
     public ObservableList<FornecedorModel> list() {
@@ -45,10 +47,10 @@ public class FornecedorDAO {
         return fornecedores;
     }
 
-    public void add(String cnpj, String razaoSocial) {
+    public void add(BigInteger cnpj, String razaoSocial) {
         PreparedStatement ps;
 
-        String sqlCmd = "INSERT into fornecedores (razao_social, cnpj, createdAt, updatedAt) VALUES (?, ?, ?, ?)";
+        String sqlCmd = "INSERT into fornecedores (cnpj, razao_social, createdAt, updatedAt) VALUES (?, ?, ?, ?)";
 
         try {
             conDAO.setAutoCommit(false);
@@ -57,7 +59,7 @@ public class FornecedorDAO {
 
             java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 
-            ps.setString(1, cnpj);
+            ps.setString(1, cnpj.toString());
             ps.setString(2, razaoSocial);
             ps.setDate(3, currentDate);
             ps.setDate(4, currentDate);
@@ -77,7 +79,7 @@ public class FornecedorDAO {
     }
 
 
-    public void update(Integer id, String cnpj, String razaoSocial) {
+    public void update(Integer id, BigInteger cnpj, String razao_social) {
         PreparedStatement ps;
         String sqlCmd = "UPDATE fornecedores SET cnpj = ?, razao_social = ? WHERE id = ?";
 
@@ -86,8 +88,8 @@ public class FornecedorDAO {
 
             ps = conDAO.prepareStatement(sqlCmd);
 
-            ps.setString(1, cnpj);
-            ps.setString(2, razaoSocial);
+            ps.setString(1, cnpj.toString());
+            ps.setString(2, razao_social);
             ps.setInt(3, id);
 
             ps.execute();
@@ -105,6 +107,7 @@ public class FornecedorDAO {
     }
 
     public void delete(Integer id) {
+        System.out.println(id);
         String sqlCmd = "DELETE FROM fornecedores WHERE id = ?";
 
         try {

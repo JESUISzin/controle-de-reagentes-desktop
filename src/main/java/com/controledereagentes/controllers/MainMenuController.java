@@ -1,6 +1,7 @@
 package com.controledereagentes.controllers;
 
 import com.controledereagentes.Main;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,6 +33,16 @@ public class MainMenuController {
             centerVBox.getChildren().setAll(nfesContent);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void onExitButtonClick() {
+        try {
+            Platform.exit();
+            System.exit(0);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
         }
     }
 }

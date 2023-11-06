@@ -1,6 +1,7 @@
 package com.controledereagentes.dao;
 
 
+import com.controledereagentes.ConnectionFactory;
 import com.controledereagentes.models.FornecedorModel;
 import com.controledereagentes.models.NfeModel;
 import javafx.collections.FXCollections;
@@ -11,8 +12,8 @@ import java.sql.*;
 public class NfeDAO {
     private final Connection conDAO;
 
-    public NfeDAO(Connection con) {
-        this.conDAO = con;
+    public NfeDAO() {
+        this.conDAO = ConnectionFactory.getConnection();
     }
 
     public ObservableList<NfeModel> list() {
@@ -50,10 +51,10 @@ public class NfeDAO {
         return nfes;
     }
 
-    public void add(String cnpj, String razaoSocial) {
+    public void add(Integer numero, Date data_emissao, Integer fornecedor_id) {
         PreparedStatement ps;
 
-        String sqlCmd = "INSERT into nfes (razao_social, cnpj, createdAt, updatedAt) VALUES (?, ?, ?, ?)";
+        String sqlCmd = "INSERT into nfes (numero, data_emissao, id_fornecedor_fk, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?)";
 
         try {
             conDAO.setAutoCommit(false);
@@ -62,10 +63,11 @@ public class NfeDAO {
 
             java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 
-            ps.setString(1, cnpj);
-            ps.setString(2, razaoSocial);
-            ps.setDate(3, currentDate);
+            ps.setInt(1, numero);
+            ps.setDate(2, data_emissao);
+            ps.setInt(3, fornecedor_id);
             ps.setDate(4, currentDate);
+            ps.setDate(5, currentDate);
 
             ps.execute();
             ps.close();
@@ -82,18 +84,19 @@ public class NfeDAO {
     }
 
 
-    public void update(Integer id, String cnpj, String razaoSocial) {
+    public void update(Integer id, Integer numero, Date data_emissao, Integer fornecedor_id) {
         PreparedStatement ps;
-        String sqlCmd = "UPDATE nfes SET cnpj = ?, razao_social = ? WHERE id = ?";
+        String sqlCmd = "UPDATE nfes SET numero = ?, data_emissao = ?, id_fornecedor_fk = ? WHERE id = ?";
 
         try {
             conDAO.setAutoCommit(false);
 
             ps = conDAO.prepareStatement(sqlCmd);
 
-            ps.setString(1, cnpj);
-            ps.setString(2, razaoSocial);
-            ps.setInt(3, id);
+            ps.setInt(1, numero);
+            ps.setDate(2, data_emissao);
+            ps.setInt(3, fornecedor_id);
+            ps.setInt(4, id);
 
             ps.execute();
             ps.close();

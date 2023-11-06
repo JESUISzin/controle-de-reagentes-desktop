@@ -38,3 +38,7 @@
     -fx-font-size: 14;
     -fx-text-fill: white;
 }
+
+.button:pressed {
+    -fx-background-color: #404040;
+}

@@ -11,6 +11,11 @@ public class FornecedorModel {
         this.cnpj = cnpj;
     }
 
+    @Override
+    public String toString() {
+        return id + " - " + razao_social + " - " + cnpj;
+    }
+
     public Integer getId() {
         return id;
     }

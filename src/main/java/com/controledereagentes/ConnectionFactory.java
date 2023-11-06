@@ -9,7 +9,7 @@ public class ConnectionFactory {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         try {
             return DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
         } catch (SQLException e) {

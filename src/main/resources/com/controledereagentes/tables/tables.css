@@ -30,6 +30,10 @@
     -fx-text-fill: white;
 }
 
+.button:pressed {
+    -fx-background-color: #404040;
+}
+
 .tableContainer {
     -fx-background-color: #181818;
     -fx-border-color: #404040;
@@ -83,25 +87,28 @@
     -fx-background-color: #3f3f3f;
 }
 
-/* Scrollbar da tablea */
-.tableView .virtual-flow .scroll-bar:vertical,
-.tableView .virtual-flow .scroll-bar:vertical .track,
-.tableView .virtual-flow .scroll-bar:vertical .track-background,
-.tableView .virtual-flow .scroll-bar:horizontal,
-.tableView .virtual-flow .scroll-bar:horizontal .track,
-.tableView .virtual-flow .scroll-bar:horizontal .track-background {
-    -fx-background-color: transparent;
+/* Scrollbar da tabela */
+.virtual-flow .scroll-bar:vertical .track-background,
+.virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: #181818;
 }
 
-.tableView .virtual-flow .scroll-bar .increment-button,
-.tableView .virtual-flow .scroll-bar .decrement-button {
-    -fx-opacity: 0;
+.virtual-flow .scroll-bar .increment-button,
+.virtual-flow .scroll-bar .decrement-button {
     -fx-padding: 2;
 }
 
-.table-view .virtual-flow .scroll-bar:vertical .thumb{
-    -fx-background-color:  #3f3f3f;
+.scroll-bar:vertical *.increment-button,
+.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: #181818;
 }
-.table-view .virtual-flow .scroll-bar:horizontal .thumb {
-    -fx-background-color:  #3f3f3f;
+
+.scroll-bar:vertical *.increment-arrow,
+.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: #3f3f3f;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #3f3f3f;
 }

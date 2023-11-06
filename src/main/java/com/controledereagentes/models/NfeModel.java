@@ -1,6 +1,8 @@
 package com.controledereagentes.models;
 
-import java.util.Date;
+
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class NfeModel {
     private Integer id;
@@ -23,21 +25,19 @@ public class NfeModel {
         return numero;
     }
 
-    public Date getData_emissao() {
-        return data_emissao;
+    public LocalDate getData_emissao() {
+        return data_emissao.toLocalDate();
+    }
+
+    public FornecedorModel getFornecedor() {
+        return fornecedor;
     }
 
     public String getRazao_social() {
-        if (fornecedor != null) {
-            return fornecedor.getRazao_social();
-        }
-        return null; // ou retorne o valor padrão desejado, como uma string vazia
+        return fornecedor.getRazao_social();
     }
 
     public String getCnpj() {
-        if (fornecedor != null) {
-            return fornecedor.getCnpj();
-        }
-        return null; // ou retorne o valor padrão desejado, como uma string vazia
+        return fornecedor.getCnpj();
     }
 }

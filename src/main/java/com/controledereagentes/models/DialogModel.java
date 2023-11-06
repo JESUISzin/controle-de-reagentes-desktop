@@ -1,13 +1,18 @@
 package com.controledereagentes.models;
 
+import com.controledereagentes.ApplicationManager;
 import com.controledereagentes.ConnectionFactory;
-import com.controledereagentes.controllers.fornecedores.UpdateTableListener;
-import com.controledereagentes.dao.FornecedorDAO;
+import com.controledereagentes.interfaces.UpdateTableListener;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.Connection;
 
 public class DialogModel {
@@ -54,8 +59,25 @@ public class DialogModel {
     }
 
     // Método que instância uma connection com o banco e a retorna
-    protected FornecedorDAO getFornecedorDAO() {
+    public Connection getConnection() {
         Connection conSql = connection.getConnection();
-        return new FornecedorDAO(conSql);
+        return conSql;
+    }
+
+    public static Stage createDialog(String title, FXMLLoader fxmlLoader) {
+        try {
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setTitle(title);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setResizable(false);
+            stage.initOwner(ApplicationManager.getInstance().getPrimaryStage());
+            stage.setScene(scene);
+            return stage;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

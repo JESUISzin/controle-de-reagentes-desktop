@@ -14,4 +14,6 @@ module com.example.controledereagentesdesktop {
     exports com.controledereagentes.dao;
     opens com.controledereagentes.controllers.fornecedores to javafx.fxml;
     opens com.controledereagentes.controllers.nfes to javafx.fxml;
+    exports com.controledereagentes.interfaces;
+    opens com.controledereagentes.interfaces to javafx.fxml;
 }
