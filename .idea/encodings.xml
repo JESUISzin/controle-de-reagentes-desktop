@@ -6,13 +6,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/controledereagentesdesktop/views" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/module-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/favicon.png" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.jpg" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.png" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.svg" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logout_icon.png" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/teste.jpg" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/white_logo.png" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/fonts/Inter-Bold.ttf" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/teste.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/white_logo.png" charset="UTF-8" />
   </component>
 </project>
