@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="800.0" maxWidth="1280.0" minHeight="400.0" minWidth="600.0" prefHeight="800.0" prefWidth="1280.0"
+            styleClass="tableContainer" stylesheets="@tables.css" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controledereagentes.controllers.reagentes.TableController">
+    <center>
+        <TableView fx:id="reagentesTable" prefHeight="200.0" prefWidth="200.0" styleClass="tableView"
+                   BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="id" maxWidth="400.0" minWidth="100.0" prefWidth="-1.0" text="ID"/>
+                <TableColumn fx:id="cod" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Código"/>
+                <TableColumn fx:id="descricao" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" text="Descrição"/>
+                <TableColumn fx:id="loc_estoque" maxWidth="100.0" minWidth="100.0" prefWidth="100.0"
+                             text="Localização"/>
+                <TableColumn fx:id="estoque_atual" maxWidth="150.0" minWidth="150.0" prefWidth="150.0"
+                             text="Estoque Atual"/>
+                <TableColumn fx:id="un" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Un"/>
+                <TableColumn fx:id="vlr_estoque" maxWidth="150.0" minWidth="106.0" prefWidth="106.0"
+                             text="Valor em Estoque"/>
+                <TableColumn fx:id="entradas" maxWidth="80.0" minWidth="80.0" text="Entradas"/>
+                <TableColumn fx:id="saidas" maxWidth="80.0" minWidth="80.0" text="Saídas"/>
+            </columns>
+            <BorderPane.margin>
+                <Insets bottom="4.0" left="10.0" right="10.0"/>
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <top>
+        <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Button fx:id="newButton" mnemonicParsing="false" onAction="#onNewTipoButtonClick" prefHeight="40.0"
+                        prefWidth="150.0" styleClass="button" text="Incluir Novo" GridPane.columnIndex="1"
+                        GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title"
+                      text="Tipos de Reagentes" textOrigin="CENTER" wrappingWidth="243.419921875"
+                      GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Text>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="12.0" right="10.0" top="20.0"/>
+            </BorderPane.margin>
+        </GridPane>
+    </top>
+    <bottom>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="commonText"
+                      text="Dica: Para editar um item, clique duas vezes.">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="12.0" right="10.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </bottom>
+</BorderPane>

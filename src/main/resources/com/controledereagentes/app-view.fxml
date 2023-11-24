@@ -84,7 +84,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-            <Button onAction="#onNfesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Lotes de Compra" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Button onAction="#onLotesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Lotes de Compra" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -92,7 +92,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button onAction="#onNfesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Tipos de Reagentes" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Button onAction="#onReagentesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Tipos de Reagentes" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -100,7 +100,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button onAction="#onNfesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Solicitações de Compra" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <Button onAction="#onSolicitacoesButtonClick" prefHeight="40.0" prefWidth="180.0" styleClass="button" text="Solicitações de Compra" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>

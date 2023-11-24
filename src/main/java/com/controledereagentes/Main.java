@@ -21,7 +21,7 @@ public class Main extends Application {
         primaryStage.setTitle("Controle de Reagentes");
         Scene scene = new Scene(root);
         scene.getStylesheets().add(css);
-//        setSecondaryScreen(primaryStage);
+        setSecondaryScreen(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
         primaryStage.getIcons().add(new Image(String.valueOf(getClass().getResource("assets/favicon.png"))));
@@ -32,11 +32,11 @@ public class Main extends Application {
         launch();
     }
 
-//    public static void setSecondaryScreen(Stage stage) { // Abre a tela no monitor secundário TODO remover depois
-//        Screen secondaryScreen = Screen.getScreens().get(1);
-//        if (secondaryScreen != null) {
-//            stage.setX(secondaryScreen.getVisualBounds().getMinX());
-//            stage.setY(secondaryScreen.getVisualBounds().getMinY());
-//        }
-//    }
+    public static void setSecondaryScreen(Stage stage) { // Abre a tela no monitor secundário TODO remover depois
+        Screen secondaryScreen = Screen.getScreens().get(1);
+        if (secondaryScreen != null) {
+            stage.setX(secondaryScreen.getVisualBounds().getMinX());
+            stage.setY(secondaryScreen.getVisualBounds().getMinY());
+        }
+    }
 }

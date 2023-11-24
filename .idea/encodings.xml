@@ -3,6 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/CustomException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/dao/LotesDAO.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/dao/SolicitacoesDAO.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/models/LoteModel.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/models/SolicitacaoModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controledereagentes/models/SolicitacaoModel.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/controledereagentesdesktop/views" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/module-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
@@ -10,5 +15,8 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/logo_white.svg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/teste.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/assets/white_logo.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/tables/fornecedores.fxml" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/tables/lotes.fxml" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/controledereagentes/tables/solicitacoes.fxml" charset="ISO-8859-1" />
   </component>
 </project>

@@ -37,6 +37,39 @@ public class MainMenuController {
     }
 
     @FXML
+    protected void onLotesButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tables/lotes.fxml"));
+            Parent lotesContent = fxmlLoader.load();
+            centerVBox.getChildren().setAll(lotesContent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onReagentesButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tables/reagentes.fxml"));
+            Parent reagentesContent = fxmlLoader.load();
+            centerVBox.getChildren().setAll(reagentesContent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onSolicitacoesButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tables/solicitacoes.fxml"));
+            Parent solicitacoesContent = fxmlLoader.load();
+            centerVBox.getChildren().setAll(solicitacoesContent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void onExitButtonClick() {
         try {
             Platform.exit();

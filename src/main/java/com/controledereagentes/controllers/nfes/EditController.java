@@ -20,7 +20,6 @@ import java.time.format.DateTimeParseException;
 
 public class EditController extends DialogModel {
     private Integer id;
-
     @FXML
     private TextField numero_input;
     @FXML

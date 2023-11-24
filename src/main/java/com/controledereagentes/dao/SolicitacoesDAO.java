@@ -1,60 +1,58 @@
 package com.controledereagentes.dao;
 
-
 import com.controledereagentes.ConnectionFactory;
-import com.controledereagentes.models.FornecedorModel;
-import com.controledereagentes.models.NfeModel;
+import com.controledereagentes.models.SolicitacaoModel;
+import com.controledereagentes.models.UsuarioModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
 
-public class NfeDAO {
+public class SolicitacoesDAO {
     private final Connection conDAO;
 
-    public NfeDAO() {
+    public SolicitacoesDAO() {
         this.conDAO = ConnectionFactory.getConnection();
     }
 
-    public ObservableList<NfeModel> list() {
+    public ObservableList<SolicitacaoModel> list() {
         PreparedStatement ps;
         ResultSet rs;
-        ObservableList<NfeModel> nfes = FXCollections.observableArrayList();
+        ObservableList<SolicitacaoModel> solicitacoes = FXCollections.observableArrayList();
 
         String sqlCmd = """
-                SELECT nfes.id, nfes.numero, nfes.data_emissao, fornecedores.id AS id_fornecedor,fornecedores.razao_social AS razao_social, fornecedores.cnpj AS cnpj
-                FROM nfes
-                INNER JOIN fornecedores ON nfes.id_fornecedor_fk = fornecedores.id
-                ORDER BY nfes.id""";
+                SELECT s.id, s.status, s.comentario, s.createdAt, u.id AS id_usuario, u.nome AS nome
+                FROM solicitacoes as s
+                INNER JOIN usuarios as u ON s.id_usuario_fk = u.id
+                ORDER BY s.id""";
 
         try {
             ps = conDAO.prepareStatement(sqlCmd);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Integer id = rs.getInt(1);
-                Integer numero = rs.getInt(2);
-                Date data_emissao = rs.getDate(3);
-                FornecedorModel fornecedor = new FornecedorModel(
-                        rs.getInt(4),
-                        rs.getString(5),
+                int id = rs.getInt("id");
+                int status = rs.getInt("status");
+                String comentario = rs.getString("comentario");
+                Timestamp createdAt = rs.getTimestamp("createdAt");
+                UsuarioModel usuario = new UsuarioModel(
+                        rs.getInt(5),
                         rs.getString(6));
 
-                nfes.add(new NfeModel(id, numero, data_emissao, fornecedor));
+                solicitacoes.add(new SolicitacaoModel(id, status, comentario, createdAt, usuario));
             }
             rs.close();
             ps.close();
-            conDAO.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return nfes;
+        return solicitacoes;
     }
 
-    public void add(Integer numero, Date data_emissao, Integer fornecedor_id) {
+    public void add(Integer status, String comentario) {
         PreparedStatement ps;
 
-        String sqlCmd = "INSERT into nfes (numero, data_emissao, id_fornecedor_fk, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?)";
+        String sqlCmd = "INSERT into solicitacoes (status, comentario, id_usuario_fk, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?)";
 
         try {
             conDAO.setAutoCommit(false);
@@ -63,9 +61,9 @@ public class NfeDAO {
 
             java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 
-            ps.setInt(1, numero);
-            ps.setDate(2, data_emissao);
-            ps.setInt(3, fornecedor_id);
+            ps.setInt(1, status);
+            ps.setString(2, comentario);
+            ps.setInt(3, 1);
             ps.setDate(4, currentDate);
             ps.setDate(5, currentDate);
 
@@ -83,25 +81,20 @@ public class NfeDAO {
         }
     }
 
-
-    public void update(Integer id, Integer numero, Date data_emissao, Integer fornecedor_id) {
+    public void update(int id, Integer status, String comentario) {
         PreparedStatement ps;
-        String sqlCmd = "UPDATE nfes SET numero = ?, data_emissao = ?, id_fornecedor_fk = ? WHERE id = ?";
+        String sqlCmd = "UPDATE solicitacoes SET status = ?, comentario = ?, id_usuario_fk = ? WHERE id = ?";
 
         try {
-            conDAO.setAutoCommit(false);
-
             ps = conDAO.prepareStatement(sqlCmd);
 
-            ps.setInt(1, numero);
-            ps.setDate(2, data_emissao);
-            ps.setInt(3, fornecedor_id);
+            ps.setInt(1, status);
+            ps.setString(2, comentario);
+            ps.setInt(3, 1);
             ps.setInt(4, id);
 
             ps.execute();
             ps.close();
-            conDAO.commit();
-            conDAO.close();
         } catch (SQLException e) {
             try {
                 conDAO.rollback();
@@ -112,8 +105,8 @@ public class NfeDAO {
         }
     }
 
-    public void delete(Integer id) {
-        String sqlCmd = "DELETE FROM nfes WHERE id = ?";
+    public void delete(int id) {
+        String sqlCmd = "DELETE FROM solicitacoes WHERE id = ?";
 
         try {
             PreparedStatement ps = conDAO.prepareStatement(sqlCmd);
@@ -122,7 +115,6 @@ public class NfeDAO {
 
             ps.execute();
             ps.close();
-            conDAO.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
